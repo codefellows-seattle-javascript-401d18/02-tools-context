@@ -28,4 +28,4 @@
 ## Bonus 2pts
   * create a CLI (`index.js`) that will use your new `map` function to uppercase all command line arguments and print them to the screen: 1pt
     * **hint:** - you'll want to check out the `process` object (and it's methods) to get an array of provided command line arguments
-  * test your CLI: 1pt
+  * test your CLI: 1pt 
