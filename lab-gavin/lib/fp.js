@@ -2,11 +2,11 @@
 
 module.exports = exports = {};
 
-exports.map = (list, ...args) => {
+exports.map = (list, args) => {
   if (!list) {
     throw new Error('Array not provided for Map');
   } else {
-    return Array.prototype.map.call(list, ...args);
+    return Array.prototype.map.call(list, args);
   }
 };
 
