@@ -8,11 +8,11 @@
   },
   "scripts": {
     "test": "jest --verbose",
-    "lint": "eslint index.js"
+    "lint": "eslint ../lib"
 
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^4.5.0",
     "jest": "^20.0.4"
