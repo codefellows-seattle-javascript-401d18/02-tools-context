@@ -2,30 +2,16 @@
 
 let fp = module.exports = {}
 
-//basically just testing the map filter whatever functions
-let addOne = function(num){
-  return num + 1
-}
-
-let lessThan = function(num){
-  if (num <= 3) {
-    return num;
-  }
-}
-
-
 fp.mapThing = function(arr, callback){
-  return Array.prototype.map.call(arr, addOne)
+  return Array.prototype.map.call(arr, num => num + 1)
 }
 
 fp.filterThing = function(arr, callback){
-  return Array.prototype.filter.call(arr, lessThan)
+  return Array.prototype.filter.call(arr, num => (num <= 3) ? num : null)
 }
 
 fp.reduceThing = function(arr, callback){
-  return Array.prototype.reduce.call(arr, function(a, b){
-    return a + b;
-  }, 0)
+  return Array.prototype.reduce.call(arr, (a, b) => a + b)
 }
 
 fp.concatThing = function(arr1, arr2){
