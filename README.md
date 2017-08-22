@@ -10,12 +10,12 @@
   * write a question and observation on canvas
 
 ## Directions
-  * create a `/lib` and `/test` directory
+  * create a `lib/` and `__test__/` directory
   * add a robust `.gitignore` file
   * include a `package.json`
   * include the provided `.eslintrc` file
   * create a `lint` script for running eslint
-  * create a `test` script for running mocha
+  * create a `test` script for running jest
   * create a `lib/fp.js` file for holding the following:
     * create stand alone `map`, `filter`, `reduce`, `concat`, and `splice` functions using the `call`, and `apply` methods we discussed today
     * you are welcome to use/experiment with `bind` too!
