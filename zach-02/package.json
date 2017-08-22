@@ -1,0 +1,16 @@
+{
+  "name": "zach-02",
+  "version": "1.0.0",
+  "description": "401 lab 02",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "lint": "eslint lib/**"
+  },
+  "author": "Zachary Johnson",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^20.0.4",
+    "eslint": "^4.5.0"
+  }
+}
