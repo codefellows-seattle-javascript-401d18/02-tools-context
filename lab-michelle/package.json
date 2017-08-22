@@ -1,0 +1,14 @@
+{
+  "name": "lab-michelle",
+  "version": "1.0.0",
+  "description": "Lab #2",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "author": "Michelle Scharlock",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^20.0.4"
+  }
+}
