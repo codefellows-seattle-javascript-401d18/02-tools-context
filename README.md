@@ -10,12 +10,12 @@
   * write a question and observation on canvas
 
 ## Directions
-  * create a `lib/` and `__test__/` directory
-  * add a robust `.gitignore` file
-  * include a `package.json`
-  * include the provided `.eslintrc` file
-  * create a `lint` script for running eslint
-  * create a `test` script for running jest
+  * create a `lib/` and `__test__/` directoryX
+  * add a robust `.gitignore` fileX
+  * include a `package.json`X
+  * include the provided `.eslintrc` fileX
+  * create a `lint` script for running eslintX
+  * create a `test` script for running jestX
   * create a `lib/fp.js` file for holding the following:
     * create stand alone `map`, `filter`, `reduce`, `concat`, and `splice` functions using the `call`, and `apply` methods we discussed today
     * you are welcome to use/experiment with `bind` too!
@@ -28,4 +28,4 @@
 ## Bonus 2pts
   * create a CLI (`index.js`) that will use your new `map` function to uppercase all command line arguments and print them to the screen: 1pt
     * **hint:** - you'll want to check out the `process` object (and it's methods) to get an array of provided command line arguments
-  * test your CLI: 1pt 
+  * test your CLI: 1pt
