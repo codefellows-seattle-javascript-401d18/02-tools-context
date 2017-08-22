@@ -1,0 +1,17 @@
+{
+  "name": "day-02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lint.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^20.0.4"
+  }
+}
