@@ -27,7 +27,7 @@ exports.concat = (arr1, arr2) => {
   }
 };
 
-exports.myReduce = (arr, idx, callback) => {
+exports.reduce = (arr, idx, callback) => {
   if (!arr){
     throw new Error('Initial array not provided for Reduce');
   } else {
