@@ -9,7 +9,7 @@ describe('fp', () => {
       expect(() => fp.myMap()).toThrowError('Array not provided for Map');
     });
     test('Should return an array with doubled numbers', () => {
-      expect(fp.myMap([1,2,3,4])).toEqual([2,4,6,8]);
+      expect(fp.myMap([1,2,3,4], (n) => { return n * 2; })).toEqual([2,4,6,8]);
     });
   });
 
@@ -18,7 +18,7 @@ describe('fp', () => {
       expect(() => fp.myFilter()).toThrowError('Array not provided for Filter');
     });
     test('Should return an array that is missing the number 4', () => {
-      expect(fp.myFilter([1, 2, 3, 4])).toEqual([1, 2, 3]);
+      expect(fp.myFilter([1, 2, 3, 4], (n) => { return n !== 4; })).toEqual([1, 2, 3]);
     });
   });
 
@@ -36,7 +36,7 @@ describe('fp', () => {
       expect(() => fp.myReduce()).toThrowError('Initial array not provided for Reduce');
     });
     test('should reduce an array down to a single value', () => {
-      expect(fp.myReduce([0, 1, 2, 3])).toEqual(6);
+      expect(fp.myReduce([0, 1, 2, 3], (acc, n) => {return acc + n; }, 0)).toEqual(6);
     });
   });
 
