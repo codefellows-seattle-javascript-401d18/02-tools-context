@@ -1,11 +1,12 @@
 //create stand alone map, filter, reduce, concat, and splice functions using the call, and apply methods we discussed today
 
 'use strict';
-module.exports = {};
+let manyFns = module.exports = {};
 
-let arr = [];
+manyFns.myMapFx = (arr, callback) => Array.prototype.map.apply(arr, callback);
 
-let myMapFx = Array.prototype.map.apply(null, arr);
+
+
   //
   //
   // let arr = [34, 3, 2, 76, 5, 99, 100]
