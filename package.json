@@ -4,9 +4,10 @@
   "description": "\"Configuring files for jest, eslint for use in apply and call functions\"",
   "main": "index.js",
   "scripts": {
-    "test": "\"jest\"",
     "start": "node index.js",
-    "lint": "eslint .; exit 0"
+    "test": "jest --verbose",
+    "lint": "eslint ../lib"
+
   },
   "repository": {
     "type": "git",

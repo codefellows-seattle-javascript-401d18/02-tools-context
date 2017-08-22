@@ -1,41 +1,44 @@
 'use strict';
 
-let fp = module.exports = {}
+module.exports = exports = {};
 
-exports.map = (arr, callback) => {
-  if(!arr) throw new Error('no array provided');
-  if(!callback) throw new Error('no callback provided');
-
-  return Array.prototype.map.call(arr, callback);
+exports.map = (list) => {
+  if (!list) {
+    throw new Error('Array not provided for Map');
+  } else {
+    return Array.prototype.map.call(list, (n) => { return n * 2;
+    });
+  }
 };
 
-exports.filter = (arr, callback) => {
-  if(!arr) throw new Error('no array provided');
-  if(!callback) throw new Error('no callback provided');
-
-  return Array.prototype.filter.call(arr, callback);
+exports.filter = (arr) => {
+  if (!arr) {
+    throw new Error('Array not provided for Filter');
+  } else {
+    return Array.prototype.filter.call(arr, (n) => { return n   !== 4;
+    });
+  }
 };
-
 exports.concat = (arr1, arr2) => {
-  if(!arr1) throw new Error('no array provided');
-  if(!arr2) throw new Error('no array provided');
-
-  return Array.prototype.concat.apply(arr1, arr2);
+  if (!arr1) {
+    throw new Error('Initial array not provided for Concat');
+  } else {
+    return Array.prototype.concat.apply(arr1, arr2);
+  }
 };
 
-exports.splice = (arr, start, deleteCount, item=[]) => {
-  if (!arr) throw new Error('no array provided');
-  if (!start) throw new Error('no start provided');
-  if (!item) throw new Error('item is undefined');
-  if (typeof deleteCount !== 'number') throw new Error('no deleteCount provided');
-
-  return Array.prototype.splice.call(arr, start, deleteCount, ...item);
-  return arr;
+exports.myReduce = (arr, idx, callback) => {
+  if (!arr){
+    throw new Error('Initial array not provided for Reduce');
+  } else {
+    return Array.prototype.reduce.call(arr, idx, callback);
+  }
 };
 
-exports.reduce = (arr, callback, start=0) => {
-  if(!arr) throw new Error('no array provided');
-  if(!callback) throw new Error('no callback provided');
-
-  return Array.prototype.reduce.call(arr, callback);
+exports.splice = (list, ...args) => {
+  if (!list) {
+    throw new Error('Initial array not provided for Splice');
+  } else {
+    return Array.prototype.splice.call(list, ...args);
+  }
 };
