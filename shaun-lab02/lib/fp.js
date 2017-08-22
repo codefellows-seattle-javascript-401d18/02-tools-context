@@ -1,6 +1,6 @@
 'use strict';
 
-module.export = exports {};
+let fp = module.exports = {}
 
 exports.map = (arr, callback) => {
   if(!arr) throw new Error('no array provided');
@@ -29,8 +29,8 @@ exports.splice = (arr, start, deleteCount, item=[]) => {
   if (!item) throw new Error('item is undefined');
   if (typeof deleteCount !== 'number') throw new Error('no deleteCount provided');
 
-  return Array.prototype.splice.call(arr, start, deleteCount, ...item;
-  return arr
+  return Array.prototype.splice.call(arr, start, deleteCount, ...item);
+  return arr;
 };
 
 exports.reduce = (arr, callback, start=0) => {

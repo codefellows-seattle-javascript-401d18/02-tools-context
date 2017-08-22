@@ -1,47 +1,50 @@
 'use strict';
 
+const fp = require('../lib/fp.js');
+const expect = require('jest').expect;
 
 // * create stand alone `map`, `filter`, `reduce`, `concat`, and `splice` functions using the `call`, and `apply` methods we discussed today
 
 //writing a test to for the fp.js. First off checking the map which I will just try to multiply an array by two
 describe('frontPage', () => {
   describe('#map', ()=> {
-    it('should return [2, 4, 6, 8]', () =>{
-      var result = fp.map([1, 2, 3, 4], (n) => n * 2);
-      expect(fp.map).toEqual([2, 4, 6, 8]);
+    test('should throw array not provided error', () => {
+      expect(() => fp.map()).toThrowError('Array not provided for map');
+    });
+    test('Should return an array with doubled number', () => {
+      expect(fp.map([1,2,3,4], (n) => {return n * 2; })).toEqual([2,4,6,8]);
     });
   });
   describe('#filter', ()=>{
-    it('should return [1, 2, 3]', ()=> {
-      var result = fp.filter([1, 2, 3, 4], n => n !== 2);
-      expect(fp.filter).toEqual([1, 2, 3]);
+    test('should throw array not provided error', () => {
+      expect(fp.filter()).toThrowError('Array not provided for filter');
+    });
+    test('Should return an array that is missing 4', () => {
+      expect(fp.filter([1,2,3,4], (n) => {return n !== 4;})).toEqual([1,2,3]);
     });
   });
   describe('#concat', () => {
-    it('should return [1, 2, 3, a, b, c]', () =>{
-      var result = fp.concat([1, 2, 3], ['a', 'b', 'c']);
-      except(fp.concat).toEqual([1, 2, 3, 'a', 'b', 'c']);
-    })
-  })
-describe('#splice', () => {
-   it('should return [duck, duck, duck]', () => {
-     var result = fp.splice(['duck', 'duck', 'goose', 'duck'], 2, 1);
-     expect(fp.splice).toEqual(['duck', 'duck', 'duck']);
-   });
-
-   it('should return [duck0, duck1, oyster, duck2]', () => {
-     var result = fp.splice(['duck0', 'duck1', 'duck2'], 2, 0, ['oyster']);
-     expect(fp.splice).toEqual(['duck0', 'duck1', 'oyster', 'duck2']);
-   });
- });
- describe('#reduce', () => {
-   it('should return 25', () => {
-     var result = fp.reduce([1, 2, 3, 4], (a, b) => a + b, 15);
-     expect(fp.reduce).to.equal(25);
-   });
-
-   it('should return 10', () => {
-     var result = fp.reduce([1, 2, 3, 4], (a, b) => a + b);
-     expect(fp.reduce).to.equal(10);
-   });
- });
+    test('should throw array not provided error', () => {
+      expect(fp.concat()).toThrowError('Nothing to concat provide');
+    });
+    test('should return both arrays combine', () => {
+      expect(fp.concat([1,2,3], [4,5,6])).toEqual([1,2,3,4,5,6]);
+    });
+  });
+  describe('#splice', () => {
+    test('should throw array not provided error', () => {
+      expect(fp.splice()).toThrowError('Initial array not provided for splice');
+    });
+    test('should reduce array', ()=> {
+      expect(fp.splice([1,2,3,4,5,6,7,8,9])).toEqual([6,7,8]);
+    });
+  });
+  describe('#reduce', () => {
+    test('should throw array not provided error', () => {
+      expect(fp.reduce()).toThrowError('Initial array not provided for reduce');
+    });
+    test('should reduce array', ()=> {
+      expect(fp.reduce([0,1,2,3], (acc, n) => { return acc + n;}, 0)).toEqual([6]);
+    });
+  });
+});
