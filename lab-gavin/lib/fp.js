@@ -2,16 +2,16 @@
 
 module.exports = exports = {};
 
-exports.map = (list, args) => {
+exports.myMap = (list, ...args) => {
   if (!list) {
     throw new Error('Array not provided for Map');
   } else {
-    return Array.prototype.map.call(list, args);
+    return Array.prototype.map.call(list, ...args);
   }
 };
 
 
-exports.filter = (arr, callback) => {
+exports.myFilter = (arr, callback) => {
   if (!arr) {
     throw new Error('Array not provided for Filter');
   } else {
@@ -19,7 +19,7 @@ exports.filter = (arr, callback) => {
   }
 };
 
-exports.concat = (arr1, arr2) => {
+exports.myConcat = (arr1, arr2) => {
   if (!arr1) {
     throw new Error('Initial array not provided for Concat');
   } else {
@@ -27,7 +27,7 @@ exports.concat = (arr1, arr2) => {
   }
 };
 
-exports.reduce = (arr, idx, callback) => {
+exports.myReduce = (arr, idx, callback) => {
   if (!arr){
     throw new Error('Initial array not provided for Reduce');
   } else {
@@ -35,7 +35,7 @@ exports.reduce = (arr, idx, callback) => {
   }
 };
 
-exports.splice = (list, ...args) => {
+exports.mySplice = (list, ...args) => {
   if (!list) {
     throw new Error('Initial array not provided for Splice');
   } else {
