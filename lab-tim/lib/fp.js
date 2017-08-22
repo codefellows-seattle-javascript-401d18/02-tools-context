@@ -6,15 +6,15 @@
 
 const arrayStuff = module.exports = {};
 
-let double = function(num) {
+let double = (num) => {
   return num + num;
 }
 
-let greaterThanTen = function(ele) {
+let greaterThanTen = (ele) => {
   return ele > 10;
 }
 
-arrayStuff.map = function(arr, callback) {
+arrayStuff.myMap = (arr, callback) => {
   if (Array.isArray(arr)) {
     return Array.prototype.map.call(arr, double);
   } else {
@@ -22,7 +22,7 @@ arrayStuff.map = function(arr, callback) {
   }
 }
 
-arrayStuff.filter = function(arr, callback) {
+arrayStuff.myFilter = (arr, callback) => {
   if (Array.isArray(arr)) {
     return Array.prototype.filter.call(arr, greaterThanTen);
   } else {
@@ -30,25 +30,25 @@ arrayStuff.filter = function(arr, callback) {
   }
 }
 
-arrayStuff.reduce = function(arr, callback) {
+arrayStuff.myReduce = (arr, callback) => {
   if (Array.isArray(arr)) {
-    return Array.prototype.reduce.call(arr, callback);
+    return Array.prototype.reduce.call(arr, (prev, curr) => prev + curr);
   } else {
     return 'Data is not an array';
   }
 }
 
-arrayStuff.concat = function(arr, callback) {
-  if (Array.isArray(arr)) {
-    return Array.prototype.concat.call(arr, callback);
+arrayStuff.myConcat = (arr, args) => {
+  if (Array.isArray(arr) && Array.isArray(args)) {
+    return Array.prototype.concat.apply(arr, args);
   } else {
     return 'Data is not an array';
   }
 }
 
-arrayStuff.splice = function(arr, callback) {
-  if (Array.isArray(arr)) {
-    return Array.prototype.splice.call(arr, callback);
+arrayStuff.mySplice = (arr, args) => {
+  if (Array.isArray(arr) && Array.isArray(args)) {
+    return Array.prototype.splice.apply(arr, args);
   } else {
     return 'Data is not an array';
   }
