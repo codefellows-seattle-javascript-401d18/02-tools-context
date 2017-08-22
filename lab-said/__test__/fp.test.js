@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const fp = require('../lib/fp');
 describe('fp.js', function() {
@@ -8,6 +8,9 @@ describe('fp.js', function() {
     });
     test('should return', ()=> {
       expect(fp.myFilter([12,14,17,18,20],(num => num >= 18))).toEqual([18,20]);
+    });
+    test('should return', ()=> {
+      expect(fp.myReduce([1,2,3,4,5],((num, value) => num + value),0)).toEqual(15);
     });
   });
 });
