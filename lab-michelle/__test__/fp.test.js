@@ -11,8 +11,18 @@ describe('Testing fp.js', function () {
     test('Should return NOPE', () => {
       expect(fp.myMapFx('jolly old saint nicolas', num=>num*2)).toEqual('NOPE');
     });
+    //NOTE: This edge case test isn't passing but I will look at it again later after I get closer on some of the other ones.//
     test('Should return NOPE', ()=> {
       expect(fp.myMapFx(['Nants', 'ingonyama', 2, 'bagithi', 'baba'], num=>num*2)).toEqual('NOPE');
     });
+  });
+  describe('testing #myFilterFx', ()=> {
+    test('Should return [bob, joe, elvis]', ()=> {
+      expect(fp.myFilterFx(['a','bob', 'joe', 'elvis'], num => num.length > 2)).toEqual(['bob', 'joe', 'elvis']);
+    });
+    test('Should return WUT DUDE NO', ()=>{
+      expect(fp.myFilterFx(false, num=>num>2)).toEqual('WUT DUDE NO');
+    });
+    test('')
   });
 });
