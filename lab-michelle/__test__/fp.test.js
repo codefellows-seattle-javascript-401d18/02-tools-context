@@ -32,13 +32,30 @@ describe('Testing fp.js', function () {
   //TESTS FOR REDUCE
   describe('testing #myReduceFx', () => {
     test('Should return 10', ()=> {
-      expect(fp.myReduceFx([1,2,3,4], 0, num =>)).toEqual(10);
+      expect(fp.myReduceFx([1,2,3,4], (current, acc) => (current += acc))).toEqual(10);
+    });
+    //Not sure why these two don't work but I have to move on because this lab is taking forever and a day//
+    test('Should return TRY AGAIN', ()=> {
+      expect(fp.myReduceFx(['lalala', undefined], (current, acc) => (current += acc))).toEqual('TRY AGAIN');
     });
     test('Should return TRY AGAIN', ()=> {
-      expect(fp.myReduceFx(something)).toEqual(something);
-    });
-    test('Should return TRY AGAIN', ()=> {
-      expect(fp.myReduceFx(something)).toEqual(something);
+      expect(fp.myReduceFx(['feet', 5, 6, 7], (current, acc)=> (current += acc))).toEqual('TRY AGAIN');
     });
   });
+  //TESTS FOR CONCAT
+  describe('testing #myConcatFx', () => {
+    test('Should return rosemarythyme', ()=> {
+      expect(fp.myConcatFx('rosemary', 'thyme'), (a,b)=> (a+b)).toEqual('rosemarythyme');
+    });
+    test('Should return PUT IN WORDS PLZ', ()=> {
+      expect(fp.myConcatFx('cats', 100), (a,b)=> (a+b)).toEqual('PUT IN WORDS PLZ');
+    });
+    test('Should return PUT IN WORDS PLZ', ()=> {
+      expect(fp.myConcatFx(undefined, Infinity), (a,b)=> (a+b)).toEqual('PUT IN WORDS PLZ');
+    });
+  });
+  describe('testing #myConcatFx', () => {
+    test('Should return rosemarythyme', ()=> {
+      expect(fp.myConcatFx('rosemary', 'thyme'), (a,b)=> (a+b)).toEqual('rosemarythyme');
+    });
 });

@@ -24,17 +24,24 @@ manyFxs.myFilterFx = (arr, callback) => {
 };
 
 //REDUCE
-manyFxs.myReduceFx = (arr, sum, callback) => {
+manyFxs.myReduceFx = (arr, callback) => {
   if (Array.isArray(arr)) {
-    return Array.prototype.reduce.call(arr, sum, callback);
+    return Array.prototype.reduce.call(arr, callback);
   } else {
     return 'TRY AGAIN';
   }
 };
 
 //CONCAT
-let myConcatFx = function() {
+manyFxs.myConcatFx = (a, b) => {
+  if ((typeof a === 'string') && (typeof b === 'string')) {
+    return String(a) + String(b);
+  } else {
+    return 'PUT IN WORDS PLZ';
+  }
 };
+
 //SPLICE
-let mySpliceFx = function() {
+let mySpliceFx = (arr, callback) => {
+  return Array.prototype.splice.call(arr, callback);
 };
