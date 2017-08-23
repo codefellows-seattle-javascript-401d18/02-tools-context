@@ -3,7 +3,7 @@
 'use strict';
 let manyFns = module.exports = {};
 
-manyFns.myMapFx = (arr, callback) => Array.prototype.map.apply(arr, callback);
+manyFns.myMapFx = (arr, callback) => Array.prototype.map.call(arr, callback);
 
 
 

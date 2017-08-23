@@ -3,9 +3,9 @@
 const fp = require('../lib/fp');
 
 describe('Testing fp.js', function () {
-  describe('default properties', () => {
-    test('Should fail because this is TDD', () => {
-      expect(fp.map([1,2,3], num=>num*2)).toEqual([3, 6, 9]);
+  describe('testing the myMapFx functionality', () => {
+    test('Should return [2,4,6]', () => {
+      expect(fp.myMapFx([1,2,3], num=>num*2)).toEqual([2,4,6]);
     });
   });
 });
