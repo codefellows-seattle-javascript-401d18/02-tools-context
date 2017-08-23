@@ -59,5 +59,11 @@ describe('Testing fp.js', function () {
     test('Should return [bob, cans, 5]', ()=> {
       expect(fp.mySpliceFx([1, 'bob', 'cans', 5], 1, 2)).toEqual(['bob', 'cans', 5]);
     });
+    test('Should return [null, Infinity]', ()=> {
+      expect(fp.mySpliceFx([undefined, null, Infinity], 1, 1)).toEqual([null, Infinity]);
+    });
+    test('Should return cool beans', ()=> {
+      expect(fp.mySpliceFx([0, -9, NaN, 'hello', true, 'true dat'], 4, 1)).toEqual([true, 'true dat']);
+    });
   });
 });
