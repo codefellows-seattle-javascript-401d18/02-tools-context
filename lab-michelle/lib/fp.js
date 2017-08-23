@@ -42,6 +42,6 @@ manyFxs.myConcatFx = (a, b) => {
 };
 
 //SPLICE
-let mySpliceFx = (arr, callback) => {
+manyFxs.mySpliceFx = (arr, callback) => {
   return Array.prototype.splice.call(arr, callback);
 };

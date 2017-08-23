@@ -54,8 +54,10 @@ describe('Testing fp.js', function () {
       expect(fp.myConcatFx(undefined, Infinity), (a,b)=> (a+b)).toEqual('PUT IN WORDS PLZ');
     });
   });
-  describe('testing #myConcatFx', () => {
-    test('Should return rosemarythyme', ()=> {
-      expect(fp.myConcatFx('rosemary', 'thyme'), (a,b)=> (a+b)).toEqual('rosemarythyme');
+  //TESTS FOR SPLICE
+  describe('testing #mySpliceFx', () => {
+    test('Should return [bob, cans, 5]', ()=> {
+      expect(fp.mySpliceFx([1, 'bob', 'cans', 5], 1, 2)).toEqual(['bob', 'cans', 5]);
     });
+  });
 });
