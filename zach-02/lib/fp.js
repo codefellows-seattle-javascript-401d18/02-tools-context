@@ -1,26 +1,19 @@
 'use strict';
 
 //export object
-const arrFunctions = module.exports = {};
+const fp = module.exports = {};
 
-
-let arr = [1 , 2, 3];
 //map
-let map = (arr, callback) => {return Array.prototype.map.call();};
+fp.mapDeal = (arr, callback) => {return Array.prototype.map.call(arr, callback);};
 
-let double = (arr) => { map((i) =>{return i * 2})};
+//filter
+fp.filterDeal = (arr, callback) => {return Array.prototype.filter.call(arr, callback);};
 
-//mapdouble
-// arrFunctions.double = arrFunctions.map( (i) => {return i * 2});
-//
-// //filter
-// arrFunctions.filter = () => {};
-//
-// //reduce
-// arrFunctions.reduce = () => {};
-//
-// //concat
-// arrFunctions.concat = () => {};
-//
-// //splice
-// arrFunctions.splice = () => {};
+//reduce
+fp.reduceDeal = (arr, callback) => {return Array.prototype.reduce.call(arr, callback);};
+
+//concat
+fp.concatDeal = (arr, arr2) => {return Array.prototype.concat.call(arr, arr2);};
+
+//splice
+fp.spliceDeal = (arr, arg) => {return Array.prototype.splice.apply(arr, arg);};
