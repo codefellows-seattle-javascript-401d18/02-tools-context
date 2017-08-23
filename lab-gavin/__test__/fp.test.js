@@ -24,6 +24,9 @@ describe('fp', () => {
     test('Should return an array that is missing the number 4', () => {
       expect(fp.myFilter([1, 2, 3, 4], (n) => { return n !== 4; })).toEqual([1, 2, 3]);
     });
+    test('Should return an array that is missing the name Gavin', () => {
+      expect(fp.myFilter(['Gavin', 'Kimmer'], (n) => { return n !== 'Gavin'; })).toEqual(['Kimmer']);
+    });
   });
 
   describe('#concat', () => {
@@ -32,6 +35,9 @@ describe('fp', () => {
     });
     test('should return both arrays combined', () => {
       expect(fp.myConcat([1,2,3], [4,5,6])).toEqual([1, 2, 3, 4, 5, 6]);
+    });
+    test('should return both arrays combined', () => {
+      expect(fp.myConcat(['Gavin', 'Alex'], ['Kimmer'])).toEqual(['Gavin', 'Alex', 'Kimmer']);
     });
   });
 
