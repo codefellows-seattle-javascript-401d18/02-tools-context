@@ -16,10 +16,10 @@ arrayStuff.myMap = function(arr, callback){
   return Array.prototype.map.call(arr, callback);
 };
 
-// arrayStuff.myFilter = function(arr, callback){
-//   return arrayStuff.prototype.filter.call(arr, callback)
-//
-// }
+arrayStuff.myFilter = function(arr, callback){
+  return Array.prtotype.filter.call(arr, callback);
+};
+
 //
 // function myReduce(arr, callback){
 //
