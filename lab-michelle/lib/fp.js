@@ -3,32 +3,39 @@
 'use strict';
 let manyFxs = module.exports = {};
 
-manyFxs.myMapFx = (arr, callback) => Array.prototype.map.call(arr, callback);
-
-
-//Syntax for filter: var newArray = arr.filter(callback[, thisArg])//
-manyFxs.myFilterFx = (callback, arg) => Array.prototype.filter.call(callback, arg); 
-
-
-  //
-  //
-  // let arr = [34, 3, 2, 76, 5, 99, 100]
-  // // arr.sort()[0]
-  // let minNum = Math.min.apply(null, arr)
-  // console.log(minNum)
+manyFxs.myMapFx = function(arr, callback) {
+  if (arr.isArray === false) {
+    return 'NOPE';
+  } else {
+    return Array.prototype.map.call(arr, callback);
+  }
+};
 //
-// let myFilterFx = function() {
 //
-// };
 //
-// let myReduceFx = function() {
+// //Syntax for filter: var newArray = arr.filter(callback[, thisArg])//
+// manyFxs.myFilterFx = (arr, callback) => Array.prototype.filter.call(arr, callback);
 //
-// };
 //
-// let myConcatFx = function() {
-//
-// };
-//
-// let mySpliceFx = function() {
-//
-// };
+//   //
+//   //
+//   // let arr = [34, 3, 2, 76, 5, 99, 100]
+//   // // arr.sort()[0]
+//   // let minNum = Math.min.apply(null, arr)
+//   // console.log(minNum)
+// //
+// // let myFilterFx = function() {
+// //
+// // };
+// //
+// // let myReduceFx = function() {
+// //
+// // };
+// //
+// // let myConcatFx = function() {
+// //
+// // };
+// //
+// // let mySpliceFx = function() {
+// //
+// // };
