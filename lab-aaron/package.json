@@ -1,17 +1,24 @@
 {
-  "name": "lab-aaron",
+  "name": "02-tools-context",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "description": "lab",
+  "main": "fp.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "lint": "eslint fp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arn1313/02-tools-context.git"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arn1313/02-tools-context/issues"
+  },
+  "homepage": "https://github.com/arn1313/02-tools-context#readme",
+  "devDependencies": {
+    "eslint": "^4.5.0",
     "jest": "^20.0.4"
   }
 }
