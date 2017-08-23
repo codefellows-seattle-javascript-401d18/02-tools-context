@@ -3,6 +3,7 @@
 const fp = require('../lib/fp');
 
 describe('Testing fp.js', function () {
+  //TESTS FOR MAP
   describe('testing #myMapFx', () => {
     test('Should return [2,4,6]', () => {
       expect(fp.myMapFx([1,2,3], num=>num*2)).toEqual([2,4,6]);
@@ -16,13 +17,16 @@ describe('Testing fp.js', function () {
       expect(fp.myMapFx(['Nants', 'ingonyama', 2, 'bagithi', 'baba'], num=>num*2)).toEqual('NOPE');
     });
   });
+  //TESTS FOR FILTER
   describe('testing #myFilterFx', ()=> {
     test('Should return [bob, joe, elvis]', ()=> {
-      expect(fp.myFilterFx(['a','bob', 'joe', 'elvis'], num => num.length > 2)).toEqual(['bob', 'joe', 'elvis']);
+      expect(fp.myFilterFx(['a','bob', 'joe', 'elvis'], word => word.length > 2)).toEqual(['bob', 'joe', 'elvis']);
     });
     test('Should return WUT DUDE NO', ()=>{
       expect(fp.myFilterFx(false, num=>num>2)).toEqual('WUT DUDE NO');
     });
-    test('')
+    test('Should return [cats, carrots]', ()=>{
+      expect(fp.myFilterFx(['cats','carrots', 'gingerbread'], word => word.includes('c'))).toEqual(['cats', 'carrots']);
+    });
   });
 });
