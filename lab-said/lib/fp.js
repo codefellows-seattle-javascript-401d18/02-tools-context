@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 let arrMethod = module.exports ={};
 
@@ -14,10 +14,10 @@ arrMethod.myFilter = function(arr, callback) {
 arrMethod.myReduce = function(arr, callback) {
   return Array.prototype.reduce.call(arr, callback);
 };
-//
-// arrMethod.myConcatr = function(arr, callback) {
-//   return Array.prototype.concat.call(arr, callback);
-// };
+
+arrMethod.myConcat = function(arr,arr1) {
+  return Array.prototype.concat.call(arr,arr1);
+};
 //
 // arrMethod.mySplice = function(arr, callback) {
 //   return Array.prototype.splice.call(arr, callback);

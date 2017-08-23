@@ -12,5 +12,8 @@ describe('fp.js', function() {
     test('should return', ()=> {
       expect(fp.myReduce([1,2,3,4,5],((num, value) => num + value),0)).toEqual(15);
     });
+    test('should return', ()=> {
+      expect(fp.myConcat(['a','b'],['c','d'])).toEqual(['a','b','c','d']);
+    });
   });
 });
