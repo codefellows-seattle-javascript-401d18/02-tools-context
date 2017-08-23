@@ -17,18 +17,18 @@ arrayStuff.myMap = function(arr, callback){
 };
 
 arrayStuff.myFilter = function(arr, callback){
-  return Array.prtotype.filter.call(arr, callback);
+  return Array.prototype.filter.call(arr, callback);
 };
 
-//
-// function myReduce(arr, callback){
-//
-// }
-//
-// function concat(arr, callback){
-//
-// }
-//
-// function splice(){
-//
-// }
+
+arrayStuff.myReduce = function(arr, callback){
+  return Array.prototype.reduce.call(arr, callback);
+};
+
+arrayStuff.myConcat = function(arr1, arr2){
+  return Array.prototype.concat.call(arr1, arr2);
+};
+
+arrayStuff.mySplice = function(arr1, arr2, arr3){
+  return Array.prototype.splice.call(arr1, arr2, arr3);
+};
