@@ -11,7 +11,11 @@ describe('fp', () => {
     test('Should return an array with doubled numbers', () => {
       expect(fp.myMap([1,2,3,4], (n) => { return n * 2; })).toEqual([2,4,6,8]);
     });
+    test('Should return an array with original numbers square root', () => {
+      expect(fp.myMap([36, 81, 9, 16], Math.sqrt)).toEqual([6,9, 3, 4]);
+    });
   });
+
 
   describe('#filter', () => {
     test('Should throw array not provided error', () => {
@@ -23,7 +27,7 @@ describe('fp', () => {
   });
 
   describe('#concat', () => {
-    test('Should throw initial array not provided error', () => {
+    test('Should throw array not provided error', () => {
       expect(() => fp.myConcat()).toThrowError('Initial array not provided for Concat');
     });
     test('should return both arrays combined', () => {
