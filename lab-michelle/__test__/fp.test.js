@@ -29,4 +29,16 @@ describe('Testing fp.js', function () {
       expect(fp.myFilterFx(['cats','carrots', 'gingerbread'], word => word.includes('c'))).toEqual(['cats', 'carrots']);
     });
   });
+  //TESTS FOR REDUCE
+  describe('testing #myReduceFx', () => {
+    test('Should return 10', ()=> {
+      expect(fp.myReduceFx([1,2,3,4], 0, num =>)).toEqual(10);
+    });
+    test('Should return TRY AGAIN', ()=> {
+      expect(fp.myReduceFx(something)).toEqual(something);
+    });
+    test('Should return TRY AGAIN', ()=> {
+      expect(fp.myReduceFx(something)).toEqual(something);
+    });
+  });
 });

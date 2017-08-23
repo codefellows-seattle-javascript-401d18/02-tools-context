@@ -5,7 +5,7 @@
 let manyFxs = module.exports = {};
 
 //MAP
-//Shouldn't the first one of these be a regular function() instead of => to create scope?
+//Shouldn't the first one of these function things be a regular function() instead of => to create scope?
 manyFxs.myMapFx = (arr, callback) => {
   if (Array.isArray(arr)) {
     return Array.prototype.map.call(arr, callback);
@@ -24,8 +24,14 @@ manyFxs.myFilterFx = (arr, callback) => {
 };
 
 //REDUCE
-let myReduceFx = function() {
+manyFxs.myReduceFx = (arr, sum, callback) => {
+  if (Array.isArray(arr)) {
+    return Array.prototype.reduce.call(arr, sum, callback);
+  } else {
+    return 'TRY AGAIN';
+  }
 };
+
 //CONCAT
 let myConcatFx = function() {
 };
