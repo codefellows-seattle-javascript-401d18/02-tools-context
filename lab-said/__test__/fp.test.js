@@ -15,5 +15,8 @@ describe('fp.js', function() {
     test('should return', ()=> {
       expect(fp.myConcat(['a','b'],['c','d'])).toEqual(['a','b','c','d']);
     });
+    test('should return', ()=> {
+      expect(fp.mySplice([12,14,17,18,20],0,2)).toEqual([12,14]);
+    });
   });
 });

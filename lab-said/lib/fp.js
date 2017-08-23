@@ -18,7 +18,7 @@ arrMethod.myReduce = function(arr, callback) {
 arrMethod.myConcat = function(arr,arr1) {
   return Array.prototype.concat.call(arr,arr1);
 };
-//
-// arrMethod.mySplice = function(arr, callback) {
-//   return Array.prototype.splice.call(arr, callback);
-// };
+
+arrMethod.mySplice = function(arr,arg, arg1) {
+  return Array.prototype.splice.call(arr, arg, arg1);
+};
