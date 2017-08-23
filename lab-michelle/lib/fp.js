@@ -4,10 +4,10 @@
 let manyFxs = module.exports = {};
 
 manyFxs.myMapFx = function(arr, callback) {
-  if (arr.isArray === false) {
-    return 'NOPE';
-  } else {
+  if (Array.isArray([arr]) = true) {
     return Array.prototype.map.call(arr, callback);
+  } else {
+    return 'NOPE';
   }
 };
 //
