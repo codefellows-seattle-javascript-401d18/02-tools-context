@@ -3,7 +3,7 @@
 const fp = require('../lib/fp');
 
 describe('Testing fp.js', function () {
-  describe('testing the myMapFx functionality', () => {
+  describe('testing #myMapFx', () => {
     test('Should return [2,4,6]', () => {
       expect(fp.myMapFx([1,2,3], num=>num*2)).toEqual([2,4,6]);
     });
@@ -12,9 +12,9 @@ describe('Testing fp.js', function () {
     // //Write another test
     // });
     //Write another test
-  describe('testing the myFilterFx functionality', () => {
+  describe('testing #myFilterFx', () => {
     test('Should return [100]', () => {
-      expect(fp.myFilterFx(num > 5, [1,2,100])).toEqual([100]);
+      expect(fp.myFilterFx([1, 2, 100], num=>num > 2)).toEqual([100]);
     });
   });
-})
+});
