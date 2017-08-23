@@ -1,0 +1,20 @@
+{
+  "name": "lab-gavin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose",
+    "lint": "eslint ../lib"
+
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "jest": "^20.0.4"
+  }
+}
