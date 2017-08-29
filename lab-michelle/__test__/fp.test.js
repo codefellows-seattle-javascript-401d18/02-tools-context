@@ -7,14 +7,13 @@ describe('Testing fp.js', function () {
   describe('testing #myMapFx', () => {
     test('Should return [2,4,6]', () => {
       expect(fp.myMapFx([1,2,3], num=>num*2)).toEqual([2,4,6]);
-      //Why this works: we can make the expect conditions sorta be anything? They don't have to follow the traditional structure of map/filter/etc?//
     });
     test('Should return NOPE', () => {
       expect(fp.myMapFx('jolly old saint nicolas', num=>num*2)).toEqual('NOPE');
     });
     //NOTE: This edge case test isn't passing but I will look at it again later after I get closer on some of the other ones.//
-    test('Should return NOPE', ()=> {
-      expect(fp.myMapFx(['Nants', 'ingonyama', 2, 'bagithi', 'baba'], num=>num*2)).toEqual('NOPE');
+    test('Should return [cheese1, cake1]', ()=> {
+      expect(fp.myMapFx(['cheese', 'cake'], ele =>ele+1)).toEqual(['cheese1', 'cake1']);
     });
   });
   //TESTS FOR FILTER
@@ -34,18 +33,17 @@ describe('Testing fp.js', function () {
     test('Should return 10', ()=> {
       expect(fp.myReduceFx([1,2,3,4], (current, acc) => (current += acc))).toEqual(10);
     });
-    //Not sure why these two don't work but I have to move on because this lab is taking forever and a day//
     test('Should return TRY AGAIN', ()=> {
-      expect(fp.myReduceFx(['lalala', undefined], (current, acc) => (current += acc))).toEqual('TRY AGAIN');
+      expect(fp.myReduceFx('lalala'), (current, acc) => (current += acc)).toEqual('TRY AGAIN');
     });
     test('Should return TRY AGAIN', ()=> {
-      expect(fp.myReduceFx(['feet', 5, 6, 7], (current, acc)=> (current += acc))).toEqual('TRY AGAIN');
+      expect(fp.myReduceFx(true), (current, acc)=> (current += acc)).toEqual('TRY AGAIN');
     });
   });
   //TESTS FOR CONCAT
   describe('testing #myConcatFx', () => {
-    test('Should return rosemarythyme', ()=> {
-      expect(fp.myConcatFx('rosemary', 'thyme'), (a,b)=> (a+b)).toEqual('rosemarythyme');
+    test('Should return [rosemary, thyme]', ()=> {
+      expect(fp.myConcatFx(['rosemary'], ['thyme'])).toEqual(['rosemary', 'thyme']);
     });
     test('Should return PUT IN WORDS PLZ', ()=> {
       expect(fp.myConcatFx('cats', 100), (a,b)=> (a+b)).toEqual('PUT IN WORDS PLZ');

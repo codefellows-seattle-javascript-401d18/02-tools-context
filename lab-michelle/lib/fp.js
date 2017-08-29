@@ -5,7 +5,6 @@
 let manyFxs = module.exports = {};
 
 //MAP
-//Shouldn't the first one of these function things be a regular function() instead of => to create scope?
 manyFxs.myMapFx = (arr, callback) => {
   if (Array.isArray(arr)) {
     return Array.prototype.map.call(arr, callback);
@@ -32,10 +31,10 @@ manyFxs.myReduceFx = (arr, callback) => {
   }
 };
 
-//CONCAT
+//CONCAT -- UPDATED
 manyFxs.myConcatFx = (a, b) => {
-  if ((typeof a === 'string') && (typeof b === 'string')) {
-    return String(a) + String(b);
+  if (Array.isArray(a) && Array.isArray(b)) {
+    return a.concat(b);
   } else {
     return 'PUT IN WORDS PLZ';
   }
