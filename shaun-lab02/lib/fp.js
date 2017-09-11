@@ -1,44 +1,47 @@
 'use strict';
 
-module.exports = exports = {};
+// create a map, filter, reduce, concat, and splice array method
+// using the .call and .apply methods
+// if arguments is not array, return error
 
-exports.map = (list) => {
-  if (!list) {
-    throw new Error('No array provided for map function');
+const arrayMeth = module.exports = {};
+
+arrayMeth.myMap = (arr, callback) => {
+  if (Array.isArray(arr)) {
+    return Array.prototype.map.call(arr, callback);
   } else {
-    return Array.prototype.map.call(list, (n) => { return n * 2;
-    });
+    return 'Data is not an array';
   }
 };
 
-exports.filter = (arr) => {
-  if (!arr) {
-    throw new Error('No array provided for filter function');
+arrayMeth.myFilter = (arr, callback) => {
+  if (Array.isArray(arr)) {
+    return Array.prototype.filter.call(arr, callback);
   } else {
-    return Array.prototype.filter.call(arr, (n) => { return n   !== 4;
-    });
-  }
-};
-exports.concat = (arr1, arr2) => {
-  if (!arr1) {
-    throw new Error('No array provided for concat function');
-  } else {
-    return Array.prototype.concat.apply(arr1, arr2);
+    return 'Data is not an array';
   }
 };
 
-exports.reduce = (arr, idx, callback) => {
-  if (!arr){
-    throw new Error('No array provided for reduce function');
+arrayMeth.myReduce = (arr, callback) => {
+  if (Array.isArray(arr)) {
+    return Array.prototype.reduce.call(arr, (prev, curr) => prev + curr);
   } else {
-    return Array.prototype.reduce.call(arr, idx, callback);
+    return 'Data is not an array';
   }
 };
 
-exports.splice = (list, ...args) => {
-  if (!list) {
-    throw new Error('No array provided for splice function');
+arrayMeth.myConcat = (arr, args) => {
+  if (Array.isArray(arr) && Array.isArray(args)) {
+    return Array.prototype.concat.apply(arr, args);
   } else {
-    return Array.prototype.splice.call(list, ...args);
+    return 'Data is not an array';
+  }
+};
+
+arrayMeth.mySplice = (arr, args) => {
+  if (Array.isArray(arr) && Array.isArray(args)) {
+    return Array.prototype.splice.apply(arr, args);
+  } else {
+    return 'Data is not an array';
   }
 };

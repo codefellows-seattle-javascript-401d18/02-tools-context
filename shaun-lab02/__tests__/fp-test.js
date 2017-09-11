@@ -1,51 +1,68 @@
-'use-strict';
+'use strict';
 
 const fp = require('../lib/fp');
 
-
-describe('fp', () => {
-  describe('#map', () => {
-    test('Should throw array not provided error', () => {
-      expect(() => fp.map()).toThrowError('No array provided for map function');
+describe('Testing fp.js', () => {
+  describe('#myMap', () => {
+    test('Should return array values doubled', () => {
+      let double = fp.myMap([1,2,3,4,5], n => n + n);
+      expect(double).toEqual([2,4,6,8,10]);
     });
-    test('Should return an array with a *2 to each element', () => {
-      expect(fp.map([1,2,3,4])).toEqual([2,4,6,8]);
+    test('Should return array values doubled', () => {
+      let double = fp.myMap([15,25,35,45,55], n => n + n);
+      expect(double).toEqual([30,50,70,90,110]);
     });
-  });
-
-  describe('#filter', () => {
-    test('Should throw array not provided error', () => {
-      expect(() => fp.filter()).toThrowError('No array provided for filter function');
-    });
-    test('Should return an array that removes the last number, 4', () => {
-      expect(fp.filter([1, 2, 3, 4])).toEqual([1, 2, 3]);
+    test('Should return error if argument is not array', () => {
+      expect(fp.myMap('joe')).toEqual('Data is not an array');
     });
   });
-
-  describe('#concat', () => {
-    test('Should throw initial array not provided error', () => {
-      expect(() => fp.concat()).toThrowError('No array provided for concat function');
+  describe('#myFilter', () => {
+    test('Should return array with only numbers greater than 10', () => {
+      let greaterThanTen = fp.myFilter([1,4,7,12,18,26], n => n > 10);
+      expect(greaterThanTen).toEqual([12,18,26]);
     });
-    test('Should return a combined array from twoo', () => {
-      expect(fp.concat([1,2,3], [4,5,6])).toEqual([1, 2, 3, 4, 5, 6]);
+    test('Should return array with only numbers greater than 10', () => {
+      let greaterThanTen = fp.myFilter([5,14,7,22,2,57], n => n > 10);
+      expect(greaterThanTen).toEqual([14,22,57]);
     });
-  });
-
-  describe('#reduce', () => {
-    test('should throw an initial array not provided error', () => {
-      expect(() => fp.reduce()).toThrowError('No array provided for reduce function');
-    });
-    test('should reduce an array down to a single value', () => {
-      expect(fp.reduce([0, 1, 2, 3], (acc, n) => {return acc + n; }, 0)).toEqual(6);
+    test('Should return error if argument is not array', () => {
+      expect(fp.myFilter('bob')).toEqual('Data is not an array');
     });
   });
-
-  describe('#splice', () => {
-    test('should throw an initial array not provided error', () => {
-      expect(() => fp.splice()).toThrowError('No array provided for splice function');
+  describe('#myReduce', () => {
+    test('Should return accumulation of values in array', () => {
+      expect(fp.myReduce([1,4,7,12,18,26])).toEqual(68);
     });
-    test('should delete items from an array', () => {
-      expect(fp.splice([1,2,3,4,5,6,7,8], 5)).toEqual([6, 7, 8]);
+    test('Should return accumulation of values in array', () => {
+      expect(fp.myReduce([16,14,27,32,108,267])).toEqual(464);
+    });
+    test('Should return error if argument is not array', () => {
+      expect(fp.myReduce(42)).toEqual('Data is not an array');
+    });
+  });
+  describe('#myConcat', () => {
+    test('Should return the arrays concatenated together', () => {
+      expect(fp.myConcat(['joe','bob'],['fred','hank'])).toEqual(['joe','bob','fred','hank']);
+    });
+    test('Should return the arrays concatenated together', () => {
+      expect(fp.myConcat([1,7,63],[23,87,16])).toEqual([1,7,63,23,87,16]);
+    });
+    test('Should return error if argument is not array', () => {
+      expect(fp.myConcat([42,17,5],56)).toEqual('Data is not an array');
+    });
+    test('Should return error if argument is not array', () => {
+      expect(fp.myConcat('frank','joe')).toEqual('Data is not an array');
+    });
+  });
+  describe('#mySplice', () => {
+    test('Should return array with bird removed', () => {
+      expect(fp.mySplice(['bird','fish','dog','cow'],[1,3])).toEqual(['fish','dog','cow']);
+    });
+    test('Should return array with green removed', () => {
+      expect(fp.mySplice(['red','yellow','blue','green'],[0,3])).toEqual(['red','yellow','blue']);
+    });
+    test('Should return error if argument is not array', () => {
+      expect(fp.mySplice('jimmy',[0,1])).toEqual('Data is not an array');
     });
   });
 });
