@@ -6,17 +6,9 @@
 
 const arrayStuff = module.exports = {};
 
-let double = (num) => {
-  return num + num;
-}
-
-let greaterThanTen = (ele) => {
-  return ele > 10;
-}
-
 arrayStuff.myMap = (arr, callback) => {
   if (Array.isArray(arr)) {
-    return Array.prototype.map.call(arr, double);
+    return Array.prototype.map.call(arr, callback);
   } else {
     return 'Data is not an array';
   }
@@ -24,7 +16,7 @@ arrayStuff.myMap = (arr, callback) => {
 
 arrayStuff.myFilter = (arr, callback) => {
   if (Array.isArray(arr)) {
-    return Array.prototype.filter.call(arr, greaterThanTen);
+    return Array.prototype.filter.call(arr, callback);
   } else {
     return 'Data is not an array';
   }
