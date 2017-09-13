@@ -1,0 +1,41 @@
+{
+  "name": "lab-ian",
+  "version": "1.0.0",
+  "description": "Code Fellows 401 - Lab 2 - Tools and Context",
+  "main": "index.js",
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "jest --watchAll",
+    "lint": "elint .",
+    "lint:test": "npm run lint && npm test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "jest": "^20.0.4"
+  },
+  "keywords": [
+    "Jest",
+    "Node",
+    "JavaScript",
+    "Arrays",
+    "TDD",
+    "Tests"
+  ],
+  "author": "Ian Waites",
+  "license": "MIT"
+}
